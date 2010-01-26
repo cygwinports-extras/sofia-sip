@@ -1,0 +1,7 @@
+category: Net
+requires: libgcc1 libsofia-sip-ua0 openssl
+sdesc: "SIP User-Agent tools"
+ldesc: "Sofia-SIP is an open-source SIP User-Agent library, compliant 
+with the IETF RFC3261 specification. It can be used as a building block 
+for SIP client software for uses such as VoIP, IM, and many other 
+real-time and person-to-person communication services."

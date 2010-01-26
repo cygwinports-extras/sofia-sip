@@ -1,0 +1,17 @@
+DESCRIPTION="SIP User-Agent library"
+HOMEPAGE="http://sofia-sip.sourceforge.net/"
+SRC_URI="mirror://sourceforge/sofia-sip/${P}.tar.gz"
+PATCH_URI="1.12.10-no-undefined.patch"
+
+PKG_NAMES="${PN} lib${PN}-ua0 lib${PN}-ua-devel lib${PN}-ua-glib3 lib${PN}-ua-glib-devel"
+sofia_sip_CONTENTS="usr/bin/*.exe usr/share/doc/ usr/share/man/"
+libsofia_sip_ua0_CONTENTS="usr/bin/cygsofia-sip-ua-0.dll"
+libsofia_sip_ua_devel_CONTENTS="--exclude=*glib* --exclude=su_source.h
+                                usr/include/ usr/lib/ usr/share/${PN}/"
+libsofia_sip_ua_glib3_CONTENTS="usr/bin/cygsofia-sip-ua-glib-3.dll"
+libsofia_sip_ua_glib_devel_CONTENTS="usr/include/*/*/su_glib.h usr/include/*/*/su_source.h
+                                     usr/lib/*glib* usr/lib/pkgconfig/*glib*"
+
+DIFF_EXCLUDES="Doxyfile named.run"
+
+ACLOCAL_FLAGS="-I m4"

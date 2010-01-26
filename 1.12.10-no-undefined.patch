@@ -1,0 +1,26 @@
+--- origsrc/sofia-sip-1.12.10/libsofia-sip-ua/Makefile.am	2008-11-27 17:09:17.000000000 -0600
++++ src/sofia-sip-1.12.10/libsofia-sip-ua/Makefile.am	2010-01-25 21:42:30.587102000 -0600
+@@ -58,6 +58,7 @@ libsofia_sip_ua_la_LIBADD = 	bnf/libbnf.
+ # set the libtool version info version:revision:age for libsofia-sip-ua
+ # - soname to 'libsofia-sip-ua.so.(CUR-AGE)'
+ libsofia_sip_ua_la_LDFLAGS = \
++	-no-undefined \
+ 	-version-info $(LIBVER_SOFIA_SIP_UA_CUR):$(LIBVER_SOFIA_SIP_UA_REV):$(LIBVER_SOFIA_SIP_UA_AGE)
+ 
+ PHONY = doxygen built-sources
+--- origsrc/sofia-sip-1.12.10/libsofia-sip-ua-glib/Makefile.am	2008-11-27 17:09:17.000000000 -0600
++++ src/sofia-sip-1.12.10/libsofia-sip-ua-glib/Makefile.am	2010-01-25 21:58:30.652014600 -0600
+@@ -18,11 +18,12 @@ lib_LTLIBRARIES += libsofia-sip-ua-glib.
+ endif
+ 
+ libsofia_sip_ua_glib_la_SOURCES =
+-libsofia_sip_ua_glib_la_LIBADD = $(GLIB_TARGETS) $(GLIB_LIBS)
++libsofia_sip_ua_glib_la_LIBADD = $(GLIB_TARGETS) ../libsofia-sip-ua/libsofia-sip-ua.la $(GLIB_LIBS)
+ 
+ # set the libtool version info version:revision:age for libsofia-sip-ua-glib
+ # - soname to 'libsofia-sip-ua-glib.so.(CUR-AGE)'
+ libsofia_sip_ua_glib_la_LDFLAGS = \
++	-no-undefined \
+ 	-version-info $(LIBVER_SOFIA_SIP_UA_GLIB_CUR):$(LIBVER_SOFIA_SIP_UA_GLIB_REV):$(LIBVER_SOFIA_SIP_UA_GLIB_AGE)
+ 
+ DOXYGEN = doxygen
