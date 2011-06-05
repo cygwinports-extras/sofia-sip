@@ -1,5 +1,5 @@
 category: Net
-requires: libgcc1 openssl
+requires: libgcc1 libopenssl098
 external-source: sofia-sip
 sdesc: "SIP User-Agent library (C runtime)"
 ldesc: "Sofia-SIP is an open-source SIP User-Agent library, compliant 

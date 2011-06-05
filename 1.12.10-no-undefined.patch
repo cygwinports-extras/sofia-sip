@@ -10,13 +10,7 @@
  PHONY = doxygen built-sources
 --- origsrc/sofia-sip-1.12.10/libsofia-sip-ua-glib/Makefile.am	2008-11-27 17:09:17.000000000 -0600
 +++ src/sofia-sip-1.12.10/libsofia-sip-ua-glib/Makefile.am	2010-01-25 21:58:30.652014600 -0600
-@@ -18,11 +18,12 @@ lib_LTLIBRARIES += libsofia-sip-ua-glib.
- endif
- 
- libsofia_sip_ua_glib_la_SOURCES =
--libsofia_sip_ua_glib_la_LIBADD = $(GLIB_TARGETS) $(GLIB_LIBS)
-+libsofia_sip_ua_glib_la_LIBADD = $(GLIB_TARGETS) ../libsofia-sip-ua/libsofia-sip-ua.la $(GLIB_LIBS)
- 
+@@ -25,6 +25,7 @@ lib_LTLIBRARIES += libsofia-sip-ua-glib.
  # set the libtool version info version:revision:age for libsofia-sip-ua-glib
  # - soname to 'libsofia-sip-ua-glib.so.(CUR-AGE)'
  libsofia_sip_ua_glib_la_LDFLAGS = \

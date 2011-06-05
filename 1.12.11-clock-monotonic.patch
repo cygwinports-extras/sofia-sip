@@ -1,0 +1,22 @@
+--- origsrc/sofia-sip-1.12.11/libsofia-sip-ua/su/su_time0.c	2011-03-11 08:49:19.000000000 -0600
++++ src/sofia-sip-1.12.11/libsofia-sip-ua/su/su_time0.c	2011-06-05 15:52:41.653101600 -0500
+@@ -179,7 +179,7 @@ su_nanotime_t su_nanotime(su_nanotime_t
+  */
+ su_nanotime_t su_monotime(su_nanotime_t *return_time)
+ {
+-#if HAVE_CLOCK_GETTIME && CLOCK_MONOTONIC
++#if HAVE_CLOCK_GETTIME && defined(CLOCK_MONOTONIC)
+   {
+     struct timespec tv;
+ 
+--- origsrc/sofia-sip-1.12.11/s2check/s2base.c	2011-03-11 08:49:19.000000000 -0600
++++ src/sofia-sip-1.12.11/s2check/s2base.c	2011-06-05 15:50:17.508850300 -0500
+@@ -63,7 +63,7 @@ now(void)
+ {
+   struct timespec tv;
+ 
+-#if CLOCK_MONOTONIC
++#ifdef CLOCK_MONOTONIC
+   if (clock_gettime(CLOCK_MONOTONIC, &tv) != 0)
+ #endif
+     clock_gettime(CLOCK_REALTIME, &tv);
