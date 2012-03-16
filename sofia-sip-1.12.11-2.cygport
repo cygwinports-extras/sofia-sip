@@ -17,3 +17,5 @@ libsofia_sip_ua_glib_devel_CONTENTS="usr/include/*/*/su_glib.h usr/include/*/*/s
 DIFF_EXCLUDES="Doxyfile named.run"
 
 ACLOCAL_FLAGS="-I m4"
+CYGCONF_ARGS="--disable-static"
+KEEP_LA_FILES="none"
