@@ -1,0 +1,32 @@
+NAME="sofia-sip"
+VERSION=1.12.11
+RELEASE=2
+CATEGORY="Libs"
+SUMMARY="SIP User-Agent library"
+DESCRIPTION="Sofia-SIP is an open-source SIP User-Agent library, compliant
+with the IETF RFC3261 specification. It can be used as a building block for
+SIP client software for uses such as VoIP, IM, and many other real-time and
+person-to-person communication services."
+HOMEPAGE="http://sofia-sip.sourceforge.net/"
+SRC_URI="mirror://sourceforge/sofia-sip/${NAME}-${VERSION}.tar.gz"
+PATCH_URI="
+	1.12.10-no-undefined.patch
+	1.12.11-clock-monotonic.patch
+"
+
+PKG_NAMES="${NAME} lib${NAME}-ua0 lib${NAME}-ua-devel lib${NAME}-ua-glib3 lib${NAME}-ua-glib-devel"
+sofia_sip_CATEGORY="Net"
+sofia_sip_SUMMARY=${SUMMARY/library/tools}
+sofia_sip_CONTENTS="usr/bin/*.exe usr/share/doc/ usr/share/man/"
+libsofia_sip_ua0_CONTENTS="usr/bin/cygsofia-sip-ua-0.dll"
+libsofia_sip_ua_devel_CONTENTS="--exclude=*glib* --exclude=su_source.h
+                                usr/include/ usr/lib/ usr/share/${NAME}/"
+libsofia_sip_ua_glib3_CONTENTS="usr/bin/cygsofia-sip-ua-glib-3.dll"
+libsofia_sip_ua_glib_devel_CONTENTS="usr/include/*/*/su_glib.h usr/include/*/*/su_source.h
+                                     usr/lib/*glib* usr/lib/pkgconfig/*glib*"
+
+DIFF_EXCLUDES="Doxyfile named.run"
+
+ACLOCAL_FLAGS="-I m4"
+
+KEEP_LA_FILES="none"
